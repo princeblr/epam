@@ -33,3 +33,5 @@ NP, all the above steps can also be automated when triggering via Vagrantfile an
 10. There are many changes that went inside the playbooks and documenting README.md for each is a tedious task and will require more time.
 
 11. Usually playbooks are self-explanatory in nature and all tasks are named to define explicity what each one does.
+
+12. To run the environment, [ ansible-playbook site.yml] that's all is required for entire setup to trigger.
