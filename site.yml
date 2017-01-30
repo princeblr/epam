@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  connection: local
+  roles: 
+    - role: roles/ansible-mysql
+    - role: roles/ansible-sqldump
+    - role: roles/ansible-tomcat
+  become: yes
