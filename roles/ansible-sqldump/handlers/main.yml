@@ -1,0 +1,3 @@
+---
+- name: restart mysql
+  service: "name={{ __mysql_daemon }} state=restarted sleep=5"

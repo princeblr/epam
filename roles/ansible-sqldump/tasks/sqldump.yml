@@ -1,0 +1,30 @@
+---
+- name: update cache
+  apt: state=present update_cache=yes 
+
+- name: creating local app repo
+  file:
+    path="{{ __application_repo_location }}"
+    state=directory
+    mode=0755
+
+- name: downloading guestbookapp zip 
+  unarchive: src="{{ __application_repo }}" dest="{{ __application_repo_location }}" copy=no
+
+- name: unzip sqldump
+  unarchive: 
+    src: "{{ __application_repo }}"
+    dest: "{{ __application_repo_location }}"
+    copy: no
+
+- name: create new database guestapp
+  mysql_db:
+    name: guestbook
+    state: present
+
+- name: import sql dump
+  mysql_db:
+    state: import
+    name: all
+    target: "{{ __application_sqldump_location }}"
+  notify: restart mysql 

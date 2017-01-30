@@ -1,0 +1,21 @@
+<Context>
+
+<Resource name="jdbc/guestbook]"
+
+auth="Container"
+
+type="javax.sql.DataSource"
+
+username="root"
+
+password="root"
+
+driverClassName="com.mysql.jdbc.Driver"
+
+url="jdbc:mysql:/localhost:3306/guestbook"
+
+maxActive="15"
+
+maxIdle="3"/>
+
+</Context>

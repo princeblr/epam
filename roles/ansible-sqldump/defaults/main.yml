@@ -1,0 +1,6 @@
+---
+__application_repo: http://www.cumulogic.com/download/Apps/guestbookapp.zip
+__application_repo_location: /opt/app
+__application_sqldump_location: /opt/app/guestbookapp/guestbookmysqldump.sql
+__application_sqldump_xml_location: /opt/app/guestbookapp/guestbookapp.xml
+__application_sqldump_xml_modified_location: /opt/app/guestbookapp/modified_xml

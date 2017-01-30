@@ -1,0 +1,24 @@
+---
+- name: deploy guestbookapp war
+  file:
+    src: "{{ application_repo_war }}"
+    dest: "{{ tomcat_webapps_root_dir }}"
+    owner: tomcat
+    group: tomcat
+    mode: 0777
+
+- name: configuring JNDI connection
+  file:
+    src: mysql-connector-java-5.1.40-bin.jar
+    dest: "{{ tomcat_catalina_home }}/lib"
+  
+- name: copying app context xml to app META-INF
+  template:
+    src: context.xml
+    dest: "{{ tomcat_webapps_dir }}/guestbookapp/META-INF"
+
+- name: copying web.xml to app WEB-INF
+  template:
+    src: web.xml
+    dest: "{{ tomcat_webapps_dir }}/guestbookapp/WEB-INF"
+  notify: reload tomcat service

@@ -1,0 +1,6 @@
+---
+- name: deploy guestbookapp war
+  jboss:
+    src: "{{ application_repo_war }}"
+    deployment: guestbookapp.war
+    state: present

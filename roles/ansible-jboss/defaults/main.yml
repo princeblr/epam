@@ -1,0 +1,32 @@
+jboss_enabled: yes                       # Enable module
+
+jboss_http_port: 8080
+jboss_https_port: 8443
+
+## Where to install jboss and Unix user/group
+jboss_owner                              : "jboss"
+jboss_group                              : "jboss"
+jboss_shell                              : "/bin/false"
+jboss_base_dir                           : "/usr/share/jboss-as"
+
+## Most likely you dont need to edit
+#todo jboss_service_enabled   : 'yes'
+jboss_major             : "7"
+jboss_minor             : "1.1"
+jboss_version           : "{{ jboss_major }}.{{ jboss_minor }}"
+#jboss_name              : "jboss-as-distribution-{{ jboss_version }}"
+jboss_name              : "jboss-as-{{ jboss_version }}"
+jboss_full_name         : "{{ jboss_name }}.Final"
+jboss_archive_extracted : "{{ jboss_full_name }}"
+jboss_archive_extracted_new: "jboss-{{ jboss_version }}.Final"
+jboss_archive           : "{{ jboss_full_name }}.zip"
+#jboss_url               : "https://sourceforge.net/projects/jboss/files/JBoss/JBoss-{{ jboss_version }}.Final/{{ jboss_archive }}"
+jboss_url               : "http://download.jboss.org/jbossas/7.1/{{ jboss_full_name }}/{{ jboss_archive }}"
+jboss_home_dir          : "{{jboss_base_dir}}/{{jboss_name}}"
+
+application_repo: http://www.cumulogic.com/download/Apps/guestbookapp.zip
+application_repo_war: /opt/app/guestbookapp/guestbookapp.war
+application_repo_location: /opt/app
+application_sqldump_xml_location: /opt/app/guestbookapp/guestbookapp.xml
+application_sqldump_xml_modified_location: /opt/app/guestbookapp/modified_xml
+

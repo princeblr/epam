@@ -1,0 +1,26 @@
+---
+- name: installing python-lxml pkg
+  apt: name=python-lxml state=present
+ 
+- name: creating custom modules location
+  file: path=/opt/ansible/test_modules state=directory
+
+- git: repo=https://github.com/cmprescott/ansible-xml dest=/opt/ansible/test_modules
+
+- name: creating modified xml dir
+  file:
+    path: "{{ __application_sqldump_xml_modified_location }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: copying app xml to new directory for modifications
+  copy: 
+    src: "{{ __application_sqldump_xml_location }}"
+    dest: "{{ __application_sqldump_xml_modified_location }}"
+    owner: root
+    group: root 
+       
+- name: editing xml elements
+  xml: file="{{ __application_sqldump_xml_modified_location }}/guestbookapp.xml" xpath=/cumulogic-app/services/elastic-load-balancer ensure=absent

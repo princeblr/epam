@@ -1,0 +1,14 @@
+---
+tomcat_version: apache-tomcat-8.5.11
+tomcat_web_url: http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.11/bin/apache-tomcat-8.5.11.tar.gz
+tomcat_home_dir: /opt/tomcat
+tomcat_catalina_home: "{{ tomcat_home_dir }}/{{ tomcat_version }}"
+tomcat_http_port: 8080
+tomcat_webapps_root_dir: "{{ tomcat_home_dir }}/{{ tomcat_version }}/webapps/ROOT"
+tomcat_webapps_dir: "{{ tomcat_home_dir }}/{{ tomcat_version }}/webapps"
+application_repo: http://www.cumulogic.com/download/Apps/guestbookapp.zip
+application_repo_location: /opt/app/guestbookapp
+application_repo_war: "{{ application_repo_location }}/guestbookapp.war"
+application_repo_location: /opt/app
+application_sqldump_xml_location: /opt/app/guestbookapp/guestbookapp.xml
+application_sqldump_xml_modified_location: /opt/app/guestbookapp/modified_xml
