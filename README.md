@@ -23,10 +23,10 @@ NP, all the above steps can also be automated when triggering via Vagrantfile an
 
 7. For xml element changes, i have used the 3rd party module like : xml element changes : https://github.com/cmprescott/ansible-xml
    This can be downloaded and saved to any modules location like i have used for my scripts, my playbook will take care
-   of the dependency pkgs. This step is critical for the xml element to successfully execute.
-   [library        = /opt/ansible/test_modules/library/] 
+   of the dependency pkgs. 
+   [library        = /opt/ansible/test_modules/library/] . it could be anything, can be changed too if the playbook fails.
 
-8. I have downloaded the war at /opt/app/guestbookapp manually creating the location.(usually this should have been included but looked like i missed it)
+8. I have downloaded the war at /opt/app/guestbookapp. (usually this is taken care by playbook)
 
 9. Also added JNDI info for configuring the correct data source but looked like there were some application issues on the jsp page.
 
