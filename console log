@@ -1,0 +1,32 @@
+Started by user admin
+Building in workspace /opt/jenkins/sudoku
+[jenkins] $ ant -file build.xml dist
+Buildfile: /opt/jenkins/build.xml
+
+init:
+
+compile:
+    [javac] /opt/jenkins/build.xml:24: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+dist:
+      [jar] Building jar: /opt/jenkins/dist/lib/Sudoku-20170131.jar
+
+BUILD SUCCESSFUL
+Total time: 3 seconds
+[jenkins] $ ant -file build.xml checkstyle
+Buildfile: /opt/jenkins/build.xml
+
+init:
+
+compile:
+    [javac] /opt/jenkins/build.xml:24: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+
+checkstyle:
+[checkstyle] Running Checkstyle 7.4 on 9 files
+
+BUILD SUCCESSFUL
+Total time: 13 seconds
+[CHECKSTYLE] Collecting checkstyle analysis files...
+[CHECKSTYLE] Finding all files that match the pattern build/checkstyle_report.xml
+[CHECKSTYLE] Computing warning deltas based on reference build #11
+Finished: SUCCESS
