@@ -9,14 +9,28 @@ git commit -m "readme" README
 git remote add origin https://github.com/princeblr/epam
 git push origin jenkins
 
-Adding build.xml to repo:
+Adding build.xml to local repo and pushing it to github repo:
 
 git add build.xml
 git commit -m "jenkins build.xml for app" build.xml
+git push origin jenkins
 
-Jenkins installation
+
+Jenkins installation on Vagrant Ubuntu VM machine:
+Following: https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu
+Make sure ports are forwarded
 
 Plugins installation :
 Checkstyle Plug-in
 Static Analysis Collector Plug-in
+
+Build location : /opt/jenkins/build
+Source location : /opt/jenkins
+Changing folder permission for jenkins user : 
+sudo chown -R jenkins:jenkins /opt/jenkins
+
+Configuring jenkins job using config.xml uploaded for easy configuration.
+
+
+
 
