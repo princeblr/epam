@@ -1,0 +1,15 @@
+Initializing git on local ubuntu server and adding it to epam github repo:
+
+mkdir jenkins
+git init
+git checkout -b jenkins
+touch README
+git add README
+git commit -m "readme" README
+git remote add origin https://github.com/princeblr/epam
+git push origin jenkins
+
+Adding build.xml to repo:
+
+git add build.xml
+git commit -m "jenkins build.xml for app" build.xml
