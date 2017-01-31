@@ -15,21 +15,33 @@ git add build.xml
 git commit -m "jenkins build.xml for app" build.xml
 git push origin jenkins
 
+install ant 
+sudo apt-get install ant
+set JAVA_HOME or use ansible java role to set the same auto
+
 
 Jenkins installation on Vagrant Ubuntu VM machine:
 Following: https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu
-Make sure ports are forwarded
+downloaded jenkins war from https://pkg.jenkins.io/debian-stable/
+Make sure ports are forwarded in vagrantfile
 
 Plugins installation :
 Checkstyle Plug-in
 Static Analysis Collector Plug-in
+Using checkstyle-7.4 
 
-Build location : /opt/jenkins/build
-Source location : /opt/jenkins
+Build location : /opt/jenkins/sudoku
+Java Source location : /opt/jenkins
+Source location files : build.xml  checkstyle-7.4  checkstyle-7.4-all.jar  src
 Changing folder permission for jenkins user : 
 sudo chown -R jenkins:jenkins /opt/jenkins
 
 Configuring jenkins job using config.xml uploaded for easy configuration.
+
+To build the project locally:
+#ant 
+#ant checkstyle
+This should build dist, build directories in the same location and checkstyle reports are contained in build directory.
 
 
 
