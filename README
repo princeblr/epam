@@ -13,3 +13,10 @@ Adding build.xml to repo:
 
 git add build.xml
 git commit -m "jenkins build.xml for app" build.xml
+
+Jenkins installation
+
+Plugins installation :
+Checkstyle Plug-in
+Static Analysis Collector Plug-in
+
